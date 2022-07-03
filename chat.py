@@ -14,6 +14,7 @@ from output.log_output import console_output
 from stored.bot_info import response_keywords
 from speech_to_text import speech_input
 from formulate_output import formulate_output
+from input.input_interpretation import input_interpretation
 
 simple_math_request = SimpleMathRequest()
 simple_weather_request = SimpleWeatherRequest()
@@ -49,28 +50,8 @@ guess_threshold = 0.75
 
 
 while True:
-    input_method_voice = False
-    if input_method_voice == True:
-        sentence = speech_input()
-        print(f"You: {sentence}")       # Voice based input
-    else:
-        sentence = input('You: ')      # Text based input
-    if sentence == 'quit':
-        break
+    # Interprets the used input and provides the probable word, the tag associated, and the original sentence
+    [prob, tag, original_sentence] = input_interpretation(model, tags, all_words, voice=True)
 
-    original_sentence = sentence
-
-    # must first tokenize and get a bag of words
-    sentence = tokenize(sentence)
-    X = bag_of_words(sentence, all_words)
-    X = X.reshape(1, X.shape[0])
-    X = torch.from_numpy(X)
-
-    output = model(X)
-    _, predicted = torch.max(output, dim=1)
-    tag = tags[predicted.item()]
-
-    probs = torch.softmax(output, dim=1)
-    prob = probs[0][predicted.item()]
-
-    formulate_output(prob, intents, tag, original_sentence)
+    # Creates an appropriate output for the input from the user
+    formulate_output(prob, intents, tag, original_sentence, guess_threshold)
