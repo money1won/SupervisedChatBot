@@ -1,0 +1,171 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "Hey",
+        "Is anyone there?",
+        "Hello",
+        "Good day"
+      ],
+      "responses": [
+        "Hello there",
+        "Hi there, what can I do for you?",
+        "Hi there, how can I help?"
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["Bye", "See you later", "Goodbye"],
+      "responses": [
+        "See you later, thanks for visiting",
+        "Have a nice day",
+        "Bye! Come back again soon."
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": ["Thanks", "Thank you", "That's helpful", "Thank's a lot!"],
+      "responses": ["Happy to help!", "Any time!", "My pleasure"]
+    },
+    {
+      "tag": "items",
+      "patterns": [
+        "Which items do you have?",
+        "What kinds of items are there?",
+        "What do you sell?"
+      ],
+      "responses": [
+        "We sell coffee and tea",
+        "We have coffee and tea"
+      ]
+    },
+    {
+      "tag": "payments",
+      "patterns": [
+        "Do you take credit cards?",
+        "Do you accept Mastercard?",
+        "Can I pay with Paypal?",
+        "Are you cash only?"
+      ],
+      "responses": [
+        "We accept VISA, Mastercard and Paypal",
+        "We accept most major credit cards, and Paypal"
+      ]
+    },
+    {
+      "tag": "delivery",
+      "patterns": [
+        "How long does delivery take?",
+        "How long does shipping take?",
+        "When do I get my delivery?"
+      ],
+      "responses": [
+        "Delivery takes 2-4 days",
+        "Shipping takes 2-4 days"
+      ]
+    },
+    {
+      "tag": "funny",
+      "patterns": [
+        "Tell me a joke!",
+        "Tell me something funny!",
+        "Do you know a joke?"
+      ],
+      "responses": [
+        "Why did the hipster burn his mouth? He drank the coffee before it was cool.",
+        "What did the buffalo say when his son left for college? Bison."
+      ]
+    },
+    {
+      "tag": "introduction",
+      "patterns": [
+        "Who are you?",
+        "What is your name?",
+        "Do you have a name?"
+      ],
+      "responses": [
+        "Allow me to introduce myself",
+        "Pleased to meet you!"
+      ]
+    },
+    {
+      "tag": "request",
+      "patterns": [
+        "Do this",
+        "Can you complete",
+        "Please do this"
+      ],
+      "responses": [
+        "request made"
+      ]
+    },
+    {
+      "tag": "math",
+      "patterns": [
+        "What is 1 + 1",
+        "What is 2 + 2",
+        "What is 1+1",
+        "What is 3+3",
+        "What is 1+ 4",
+        "What is 4 +3",
+        "Can you calculate 4+ 1",
+        "Calculate 3+1"
+      ],
+      "responses": [
+        "The answer is: "
+      ]
+    },
+    {
+      "tag": "weather",
+      "patterns": [
+        "What is the weather here?",
+        "What is the weather?",
+        "Will it rain?",
+        "Is it raining?",
+        "Is there a storm?",
+        "Is it sunny?",
+        "Is it cloudy?",
+        "When will it be sunny?"
+      ],
+      "responses": [
+        "Let me fetch the weather for you"
+      ]
+    },
+    {
+      "tag": "how are you",
+      "patterns": [
+        "How are you?",
+        "Are you feeling well?",
+        "Are you ok?"
+      ],
+      "responses": [
+        "I'm doing {EMOTION} thank you",
+        "I'm having a {EMOTION} day"
+      ]
+    },
+    {
+      "tag": "stock check",
+      "patterns": [
+        "What does the market look like?",
+        "Stocks?"
+      ],
+      "responses": [
+        "Currently investing in {STOCK}"
+      ]
+    },
+        {
+      "tag": "query",
+      "patterns": [
+        "What is",
+        "What is the",
+        "Do you know about",
+        "Who is"
+      ],
+      "responses": [
+        "I will google it"
+      ]
+    }
+  ]
+}
