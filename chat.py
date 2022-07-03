@@ -8,6 +8,8 @@ from stored.bot_info import name
 from output.formulate_output import formulate_output
 from input.input_interpretation import input_interpretation
 
+from communication.discord.discord_main import on_message, bot_radio_init
+
 simple_math_request = SimpleMathRequest()
 simple_weather_request = SimpleWeatherRequest()
 simple_google_request = SimpleGoogleRequest()
@@ -42,8 +44,11 @@ guess_threshold = 0.75
 
 
 while True:
+    # bot_radio_init()
+    # on_message()
+
     # Interprets the used input and provides the probable word, the tag associated, and the original sentence
-    [prob, tag, original_sentence] = input_interpretation(model, tags, all_words, voice=True)
+    [prob, tag, original_sentence] = input_interpretation(model, tags, all_words, voice='type')
 
     # Creates an appropriate output for the input from the user
     formulate_output(prob, intents, tag, original_sentence, guess_threshold)

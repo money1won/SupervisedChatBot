@@ -3,14 +3,17 @@ from nltk_utils import bag_of_words, tokenize
 from speech_to_text import speech_input
 
 
-def input_interpretation(model, tags, all_words, voice=False):
+def input_interpretation(model, tags, all_words, discord_message="", voice='voice'):
     input_method_voice = voice
-    if input_method_voice == True:
+    sentence = ""
+    if input_method_voice == 'voice':
         sentence = speech_input()
         print(f"You: {sentence}")  # Voice based input
-    else:
+    elif voice == 'discord':
+        sentence = discord_message
+    elif voice == 'type':
         sentence = input('You: ')  # Text based input
-    if sentence == 'quit':
+    elif sentence == 'quit':
         pass
 
     original_sentence = sentence
