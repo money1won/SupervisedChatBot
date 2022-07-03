@@ -1,22 +1,9 @@
-
-import random
-import json
 import torch
-from model import NeuralNet
 from nltk_utils import bag_of_words, tokenize
-from command_requests.math.do_math import SimpleMathRequest
-from command_requests.info_search.weather.retrieve_weather import SimpleWeatherRequest
-from command_requests.info_search.google.basic_google import SimpleGoogleRequest
-from text_to_speech import speak
-from playsound import playsound
-from gtts import gTTS
-from stored.bot_info import name
-from output.log_output import console_output
-from stored.bot_info import response_keywords
 from speech_to_text import speech_input
-from formulate_output import formulate_output
 
-def input_interpretation(model, tags, all_words, voice):
+
+def input_interpretation(model, tags, all_words, voice=False):
     input_method_voice = voice
     if input_method_voice == True:
         sentence = speech_input()
