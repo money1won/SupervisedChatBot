@@ -12,6 +12,7 @@ from gtts import gTTS
 from stored.bot_info import name
 from output.log_output import console_output
 from stored.bot_info import response_keywords
+from speech_to_text import speech_input
 
 simple_math_request = SimpleMathRequest()
 simple_weather_request = SimpleWeatherRequest()
@@ -47,7 +48,12 @@ guess_threshold = 0.75
 
 
 while True:
-    sentence = input('You: ')
+    input_method_voice = True
+    if input_method_voice == True:
+        sentence = speech_input()
+        print(f"You: {sentence}")       # Voice based input
+    else:
+        sentence = input('You: ')      # Text based input
     if sentence == 'quit':
         break
 

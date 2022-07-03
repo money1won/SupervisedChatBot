@@ -21,19 +21,16 @@ import torch
 # ### update weights
 # # next forward / backward pass
 
+import speech_recognition as sr
+print(sr.__version__) # just to print the version not required
+r = sr.Recognizer()
+my_mic = sr.Microphone(device_index=2) #my device index is 1, you have to put your device index
+with my_mic as source:
+    print("Say now!!!!")
+    r.adjust_for_ambient_noise(source) #reduce noise
+    audio = r.listen(source) #take voice input from the microphone
+print(r.recognize_google(audio)) #to print voice into text
 
-import numpy as np
 
-
-X = np.array([1,2,3,4], dtype=np.float32)
-Y = np.array([2,4,6,8], dtype=np.float32)
-
-w = 0.0
-
-# model prediction
-def forward(x):
-    return w*x
-
-# loss
 
 # gradient
