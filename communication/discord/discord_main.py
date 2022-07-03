@@ -59,5 +59,5 @@ async def on_message(message):
 
         await message.channel.send(str(response))
 
-def bot_radio_init():
-    client.run(TOKEN)
+
+client.run(TOKEN)
