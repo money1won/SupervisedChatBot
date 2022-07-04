@@ -1,5 +1,8 @@
 import json
 import torch
+# import discord
+
+
 from model import NeuralNet
 from command_requests.math.do_math import SimpleMathRequest
 from command_requests.info_search.weather.retrieve_weather import SimpleWeatherRequest
@@ -8,7 +11,21 @@ from stored.bot_info import name
 from output.formulate_output import formulate_output
 from input.input_interpretation import input_interpretation
 
-from communication.discord.discord_main import on_message, bot_radio_init
+# from communication.discord.discord_main import bot_discord_init
+# import asyncio
+# from discord.ext import commands
+
+import multiprocessing
+import threading
+import time
+import sys
+import subprocess
+
+
+
+
+
+
 
 simple_math_request = SimpleMathRequest()
 simple_weather_request = SimpleWeatherRequest()
@@ -43,12 +60,16 @@ print("Let's chat! Type 'quit' to exit")
 guess_threshold = 0.75
 
 
-while True:
-    # bot_radio_init()
-    # on_message()
-
+def type_chat():
     # Interprets the used input and provides the probable word, the tag associated, and the original sentence
     [prob, tag, original_sentence] = input_interpretation(model, tags, all_words, voice='type')
 
     # Creates an appropriate output for the input from the user
     formulate_output(prob, intents, tag, original_sentence, guess_threshold)
+
+
+# DON'T CHANGE THIS! Finally figured it out
+subprocess.Popen("python communication\\discord\\discord_main.py")
+
+while True:
+    type_chat()

@@ -64,9 +64,7 @@ def formulate_output(prob, intents, tag, original_sentence, guess_threshold=0.75
                     response = simple_google_request.execute(original_sentence)
 
     else:
-        print(f'{bot_name}: I do not understand...')
         response = "I do not understand"
-        speak("I do not understand...")
 
     if not discord_message:
         console_output(response)
