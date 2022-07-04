@@ -20,9 +20,6 @@ TOKEN = "OTkzMjE2Mjk0NTI4NzUzNjg1.GvaXri.sbgoCDRpNTlujH_Gwq8e4damDVRdG0OPPHR9Lc"
 client = discord.Client()
 client_command = commands.Bot(command_prefix = '!')
 
-
-
-
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 with open('intents.json', 'r') as f:
@@ -65,15 +62,6 @@ async def on_message(message):
 
 def bot_discord_init():
     client.run(TOKEN)
-
-# client.run(TOKEN)
-
-# def driver(coroutine):
-#     try:
-#         coroutine.send(None)
-#         coroutine.close()
-#     except:
-#         return
 
 bot_discord_init()
 

@@ -69,7 +69,8 @@ def type_chat():
 
 
 # DON'T CHANGE THIS! Finally figured it out
-subprocess.Popen("python communication\\discord\\discord_main.py")
+s1 = subprocess.Popen("python communication\\discord\\discord_main.py")
+time.sleep(2)
 
 while True:
     type_chat()
