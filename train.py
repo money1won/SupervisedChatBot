@@ -18,14 +18,14 @@ xy = []
 # loop through each sentence in our intents patterns
 for intent in intents['intents']:
     tag = intent['tag']
-    # add to tag list
+    # add tag to tag list
     tags.append(tag)
     for pattern in intent['patterns']:
         # tokenize each word in the sentence
         w = tokenize(pattern)
         # add to our words list
         all_words.extend(w)
-        # add to xy pair
+        # add word to xy pair, associating the word 'x' with the tag 'y'
         xy.append((w, tag))
 
 # stem and lower each word

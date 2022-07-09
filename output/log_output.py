@@ -1,4 +1,4 @@
-from stored.bot_info import name
+from stored.bot_info import Bot
 
 def console_output(string):
-    print(f"{name}: " + str(string))
+    print(f"{Bot.name}: " + str(string))

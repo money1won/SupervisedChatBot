@@ -6,15 +6,15 @@ from command_requests.info_search.google.basic_google import SimpleGoogleRequest
 from text_to_speech import speak
 
 from output.log_output import console_output
-from stored.bot_info import response_keywords
 
-from stored.bot_info import name
+from stored.bot_info import Bot
 
 simple_math_request = SimpleMathRequest()
 simple_weather_request = SimpleWeatherRequest()
 simple_google_request = SimpleGoogleRequest()
 
-bot_name = name
+bot_name = Bot.name
+bot_response_keywords = Bot.response_keywords
 
 
 def formulate_output(prob, intents, tag, original_sentence, guess_threshold=0.75, discord_message=False):
@@ -38,12 +38,12 @@ def formulate_output(prob, intents, tag, original_sentence, guess_threshold=0.75
                     response_keyword = response[response.find("{") + 1: response.find("}")]
                     response_keyword = response_keyword.lower()
                     response = response.replace(response[response.find("{"): response.find("}") + 1],
-                                                response_keywords[response_keyword])
+                                                bot_response_keywords[response_keyword])
 
                 # Any data involved commands can go down here
 
                 if tag == "introduction":
-                    response = f"My name is {bot_name}"
+                    pass
 
                 if tag == "request":
                     print("request has been made")

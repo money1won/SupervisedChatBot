@@ -33,12 +33,11 @@
       "tag": "items",
       "patterns": [
         "Which items do you have?",
-        "What kinds of items are there?",
-        "What do you sell?"
+        "What do you have on you?",
+        "Do you have anything?"
       ],
       "responses": [
-        "We sell coffee and tea",
-        "We have coffee and tea"
+        "The items I have are {ITEMS}"
       ]
     },
     {
@@ -50,8 +49,7 @@
         "Are you cash only?"
       ],
       "responses": [
-        "We accept VISA, Mastercard and Paypal",
-        "We accept most major credit cards, and Paypal"
+        "I utilize a prepaid debit card that my user provides me to perform all financial functions"
       ]
     },
     {
@@ -75,7 +73,8 @@
       ],
       "responses": [
         "Why did the hipster burn his mouth? He drank the coffee before it was cool.",
-        "What did the buffalo say when his son left for college? Bison."
+        "What did the buffalo say when his son left for college? Bison.",
+        "What do potatoes do when they are resolving an issue? They hash it out!"
       ]
     },
     {
@@ -86,8 +85,8 @@
         "Do you have a name?"
       ],
       "responses": [
-        "Allow me to introduce myself",
-        "Pleased to meet you!"
+        "Allow me to introduce myself. My name is {NAME}",
+        "My name is {NAME} pleased to meet you!"
       ]
     },
     {

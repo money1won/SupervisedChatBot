@@ -7,7 +7,7 @@ from model import NeuralNet
 from command_requests.math.do_math import SimpleMathRequest
 from command_requests.info_search.weather.retrieve_weather import SimpleWeatherRequest
 from command_requests.info_search.google.basic_google import SimpleGoogleRequest
-from stored.bot_info import name
+from stored.bot_info import Bot
 from output.formulate_output import formulate_output
 from input.input_interpretation import input_interpretation
 
@@ -53,7 +53,8 @@ model = NeuralNet(input_size, hidden_size, output_size).to(device)
 model.load_state_dict(model_state)
 model.eval()
 
-bot_name = name
+bot = Bot()
+bot_name = bot.name
 
 print("Let's chat! Type 'quit' to exit")
 
